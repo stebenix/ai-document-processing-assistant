@@ -1,6 +1,6 @@
 # AI Document Processing Assistant — Portfolio Case Study
 
-A polished, responsive AI Integrator portfolio project for invoice/document automation.
+An AI Integrator portfolio case study for automating document-heavy finance operations — from document intake and OCR/LLM extraction to validation rules, human review, audit trail, and ERP-ready export.
 
 ## What this project shows
 
