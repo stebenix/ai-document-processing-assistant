@@ -1,0 +1,25 @@
+{
+  "name": "ai-document-processing-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI Document Processing Assistant portfolio case study built as a Vite web app.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "ai-integrator",
+    "document-processing",
+    "invoice-automation",
+    "portfolio",
+    "vite"
+  ],
+  "author": "Oleksandr Stebeniev",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "latest"
+  },
+  "dependencies": {}
+}
