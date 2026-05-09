@@ -1,5 +1,13 @@
 # AI Document Processing Assistant — Portfolio Case Study
 
+![Vite](https://img.shields.io/badge/Vite-Project-646CFF)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E)
+![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-222222)
+![AI Integrator](https://img.shields.io/badge/Role-AI%20Integrator-7C3AED)
+![Portfolio](https://img.shields.io/badge/Type-Case%20Study-0F766E)
+
+**Live demo:** https://stebenix.github.io/ai-document-processing-assistant/
+
 An AI Integrator portfolio case study for automating document-heavy finance operations — from document intake and OCR/LLM extraction to validation rules, human review, audit trail, and ERP-ready export.
 
 ## What this project shows
