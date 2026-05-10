@@ -14,6 +14,7 @@ const fieldFormatters = {
   blocked_count: (value) => numberFormat.format(value),
   average_confidence: (value) => percentFormat.format(value),
   average_risk_score: (value) => Number(value).toFixed(1),
+  review_rate: (_value, summary) => percentFormat.format(summary.total_documents ? summary.human_review_count / summary.total_documents : 0),
   review_ratio: (_value, summary) => `${summary.human_review_count} / ${summary.total_documents}`,
   review_caption: (_value, summary) => `${summary.blocked_count} blocked · avg risk ${Number(summary.average_risk_score).toFixed(1)}`,
 };
