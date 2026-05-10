@@ -1,0 +1,3854 @@
+{
+  "generated_at": "2026-05-10T10:48:22.335055Z",
+  "batch_summary": {
+    "total_documents": 24,
+    "auto_export_count": 11,
+    "auto_export_rate": 0.46,
+    "human_review_count": 11,
+    "blocked_count": 2,
+    "average_confidence": 0.87,
+    "average_risk_score": 16.2,
+    "route_distribution": {
+      "Auto export to ERP": 11,
+      "Finance review": 2,
+      "Procurement review": 2,
+      "Compliance review": 7,
+      "Blocked": 2
+    },
+    "top_validation_issues": [
+      {
+        "rule": "amount_match",
+        "count": 4
+      },
+      {
+        "rule": "required_fields_completeness",
+        "count": 3
+      },
+      {
+        "rule": "po_number_presence",
+        "count": 3
+      },
+      {
+        "rule": "duplicate_check",
+        "count": 2
+      },
+      {
+        "rule": "iban_format",
+        "count": 1
+      }
+    ]
+  },
+  "batch_recommendations": [
+    "Use the generated JSON as static evidence for the dashboard while keeping GitHub Pages deployment simple.",
+    "Focus process improvement on amount_match issues.",
+    "Review staffing for 11 specialist-review documents."
+  ],
+  "documents": [
+    {
+      "document_id": "DOC-2026-001",
+      "document_type": "invoice",
+      "source_channel": "Email",
+      "vendor_name": "Müller Maschinenbau GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "RE-2026-1001",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE123456789",
+      "po_number": "PO-45001231",
+      "amount": 2480.75,
+      "currency": "EUR",
+      "due_date": "2026-05-22",
+      "received_at": "2026-05-08T08:12:00Z",
+      "line_items_count": 5,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.94,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 0,
+        "risk_level": "low",
+        "explanation": "Low operational risk; document can follow standard processing.",
+        "top_risk_factors": []
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": true,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [],
+        "export_payload_preview": {
+          "document_id": "DOC-2026-001",
+          "document_type": "invoice",
+          "vendor_name": "Müller Maschinenbau GmbH",
+          "invoice_number": "RE-2026-1001",
+          "po_number": "PO-45001231",
+          "amount": 2480.75,
+          "currency": "EUR",
+          "due_date": "2026-05-22",
+          "iban": "DE89370400440532013000",
+          "vat_id": "DE123456789",
+          "line_items_count": 5
+        }
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-08T08:12:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Email from Müller Maschinenbau GmbH."
+        },
+        {
+          "timestamp": "2026-05-08T08:14:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.94."
+        },
+        {
+          "timestamp": "2026-05-08T08:15:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-08T08:16:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 0 (low)."
+        },
+        {
+          "timestamp": "2026-05-08T08:17:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-08T08:18:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-08T08:19:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export prepared."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-002",
+      "document_type": "invoice",
+      "source_channel": "DMS",
+      "vendor_name": "Nordlicht Verpackung AG",
+      "vendor_country": "DE",
+      "invoice_number": "INV-77881",
+      "iban": "DE44500105175407324931",
+      "vat_id": "DE987654321",
+      "po_number": "PO-45001232",
+      "amount": 18450.0,
+      "currency": "EUR",
+      "due_date": "2026-05-14",
+      "received_at": "2026-05-08T09:05:00Z",
+      "line_items_count": 12,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.88,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "failed",
+          "severity": "high",
+          "message": "Amount mismatch against purchase order or delivery note."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 36,
+        "risk_level": "medium",
+        "explanation": "Risk driven by amount_mismatch, high_amount_threshold, urgent_due_date.",
+        "top_risk_factors": [
+          {
+            "factor": "amount_mismatch",
+            "weight": 18,
+            "detail": "Amount mismatch requires reconciliation."
+          },
+          {
+            "factor": "high_amount_threshold",
+            "weight": 10,
+            "detail": "Amount is at or above 10000 EUR."
+          },
+          {
+            "factor": "urgent_due_date",
+            "weight": 8,
+            "detail": "Due date is within the urgent processing window."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Finance review",
+        "routing_reason": "Financial reconciliation is required before export.",
+        "next_best_action": "Compare amount, line items, and approval limits with source documents."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Amount mismatch against purchase order or delivery note.",
+          "Route is Finance review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Send document to Finance review due to amount mismatch."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-08T09:05:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via DMS from Nordlicht Verpackung AG."
+        },
+        {
+          "timestamp": "2026-05-08T09:07:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.88."
+        },
+        {
+          "timestamp": "2026-05-08T09:08:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-08T09:09:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 36 (medium)."
+        },
+        {
+          "timestamp": "2026-05-08T09:10:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Finance review."
+        },
+        {
+          "timestamp": "2026-05-08T09:11:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Send document to Finance review due to amount mismatch."
+        },
+        {
+          "timestamp": "2026-05-08T09:12:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-003",
+      "document_type": "delivery_note",
+      "source_channel": "Supplier Portal",
+      "vendor_name": "Rhein-Ruhr Logistik GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE111222333",
+      "po_number": "PO-45001233",
+      "amount": 920.4,
+      "currency": "EUR",
+      "due_date": "2026-05-20",
+      "received_at": "2026-05-08T10:22:00Z",
+      "line_items_count": 8,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.91,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 0,
+        "risk_level": "low",
+        "explanation": "Low operational risk; document can follow standard processing.",
+        "top_risk_factors": []
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": true,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [],
+        "export_payload_preview": {
+          "document_id": "DOC-2026-003",
+          "document_type": "delivery_note",
+          "vendor_name": "Rhein-Ruhr Logistik GmbH",
+          "invoice_number": "",
+          "po_number": "PO-45001233",
+          "amount": 920.4,
+          "currency": "EUR",
+          "due_date": "2026-05-20",
+          "iban": "DE89370400440532013000",
+          "vat_id": "DE111222333",
+          "line_items_count": 8
+        }
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-08T10:22:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Supplier Portal from Rhein-Ruhr Logistik GmbH."
+        },
+        {
+          "timestamp": "2026-05-08T10:24:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.91."
+        },
+        {
+          "timestamp": "2026-05-08T10:25:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-08T10:26:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 0 (low)."
+        },
+        {
+          "timestamp": "2026-05-08T10:27:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-08T10:28:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-08T10:29:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export prepared."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-004",
+      "document_type": "purchase_order",
+      "source_channel": "PDF Upload",
+      "vendor_name": "AlpenTech Components GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE222333444",
+      "po_number": "PO-45001234",
+      "amount": 6400.0,
+      "currency": "EUR",
+      "due_date": "2026-06-02",
+      "received_at": "2026-05-08T11:30:00Z",
+      "line_items_count": 4,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.96,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 0,
+        "risk_level": "low",
+        "explanation": "Low operational risk; document can follow standard processing.",
+        "top_risk_factors": []
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": true,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [],
+        "export_payload_preview": {
+          "document_id": "DOC-2026-004",
+          "document_type": "purchase_order",
+          "vendor_name": "AlpenTech Components GmbH",
+          "invoice_number": "",
+          "po_number": "PO-45001234",
+          "amount": 6400.0,
+          "currency": "EUR",
+          "due_date": "2026-06-02",
+          "iban": "DE89370400440532013000",
+          "vat_id": "DE222333444",
+          "line_items_count": 4
+        }
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-08T11:30:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via PDF Upload from AlpenTech Components GmbH."
+        },
+        {
+          "timestamp": "2026-05-08T11:32:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.96."
+        },
+        {
+          "timestamp": "2026-05-08T11:33:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-08T11:34:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 0 (low)."
+        },
+        {
+          "timestamp": "2026-05-08T11:35:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-08T11:36:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-08T11:37:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export prepared."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-005",
+      "document_type": "credit_note",
+      "source_channel": "Email",
+      "vendor_name": "Hanse Büroservice GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "CN-2026-044",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE333444555",
+      "po_number": "PO-45001235",
+      "amount": -315.2,
+      "currency": "EUR",
+      "due_date": "2026-05-25",
+      "received_at": "2026-05-08T12:45:00Z",
+      "line_items_count": 2,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.9,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 0,
+        "risk_level": "low",
+        "explanation": "Low operational risk; document can follow standard processing.",
+        "top_risk_factors": []
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": true,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [],
+        "export_payload_preview": {
+          "document_id": "DOC-2026-005",
+          "document_type": "credit_note",
+          "vendor_name": "Hanse Büroservice GmbH",
+          "invoice_number": "CN-2026-044",
+          "po_number": "PO-45001235",
+          "amount": -315.2,
+          "currency": "EUR",
+          "due_date": "2026-05-25",
+          "iban": "DE89370400440532013000",
+          "vat_id": "DE333444555",
+          "line_items_count": 2
+        }
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-08T12:45:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Email from Hanse Büroservice GmbH."
+        },
+        {
+          "timestamp": "2026-05-08T12:47:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.90."
+        },
+        {
+          "timestamp": "2026-05-08T12:48:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-08T12:49:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 0 (low)."
+        },
+        {
+          "timestamp": "2026-05-08T12:50:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-08T12:51:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-08T12:52:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export prepared."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-006",
+      "document_type": "invoice",
+      "source_channel": "Email",
+      "vendor_name": "Saxonia IT Services GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "RE-2026-2210",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE444555666",
+      "po_number": "",
+      "amount": 1580.0,
+      "currency": "EUR",
+      "due_date": "2026-05-18",
+      "received_at": "2026-05-08T13:10:00Z",
+      "line_items_count": 3,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.86,
+        "completeness": 1.0,
+        "missing_fields": [
+          "po_number"
+        ],
+        "low_confidence_fields": [
+          "po_number"
+        ],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "failed",
+          "severity": "high",
+          "message": "Missing required fields: po_number."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "failed",
+          "severity": "high",
+          "message": "PO number is required before ERP export."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 8,
+        "risk_level": "low",
+        "explanation": "Risk driven by missing_required_fields.",
+        "top_risk_factors": [
+          {
+            "factor": "missing_required_fields",
+            "weight": 8,
+            "detail": "1 field(s) require completion."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Procurement review",
+        "routing_reason": "Purchase order reference is missing for a PO-controlled document.",
+        "next_best_action": "Request or match the PO number before financial posting."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Missing required fields: po_number.",
+          "PO number is required before ERP export.",
+          "Route is Procurement review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Request missing PO number from supplier or procurement before ERP export."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-08T13:10:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Email from Saxonia IT Services GmbH."
+        },
+        {
+          "timestamp": "2026-05-08T13:12:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.86."
+        },
+        {
+          "timestamp": "2026-05-08T13:13:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-08T13:14:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 8 (low)."
+        },
+        {
+          "timestamp": "2026-05-08T13:15:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Procurement review."
+        },
+        {
+          "timestamp": "2026-05-08T13:16:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Request missing PO number from supplier or procurement before ERP export."
+        },
+        {
+          "timestamp": "2026-05-08T13:17:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-007",
+      "document_type": "invoice",
+      "source_channel": "DMS",
+      "vendor_name": "Baltic Robotics GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "BR-55802",
+      "iban": "DE12345678901234567890",
+      "vat_id": "DE555666777",
+      "po_number": "PO-45001237",
+      "amount": 7200.0,
+      "currency": "EUR",
+      "due_date": "2026-05-13",
+      "received_at": "2026-05-08T14:00:00Z",
+      "line_items_count": 6,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.79,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [
+          "iban",
+          "invoice_number",
+          "vat_id"
+        ],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "failed",
+          "severity": "high",
+          "message": "IBAN is missing or failed format/checksum validation."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 38,
+        "risk_level": "medium",
+        "explanation": "Risk driven by invalid_iban, low_extraction_confidence, urgent_due_date.",
+        "top_risk_factors": [
+          {
+            "factor": "invalid_iban",
+            "weight": 16,
+            "detail": "IBAN failed plausibility or checksum validation."
+          },
+          {
+            "factor": "low_extraction_confidence",
+            "weight": 14,
+            "detail": "Extraction confidence is 0.79."
+          },
+          {
+            "factor": "urgent_due_date",
+            "weight": 8,
+            "detail": "Due date is within the urgent processing window."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Compliance review",
+        "routing_reason": "Supplier master data or cross-border compliance needs review.",
+        "next_best_action": "Verify supplier identity, tax data, and bank details before release."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "IBAN is missing or failed format/checksum validation.",
+          "Route is Compliance review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Verify supplier bank details before payment release."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-08T14:00:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via DMS from Baltic Robotics GmbH."
+        },
+        {
+          "timestamp": "2026-05-08T14:02:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.79."
+        },
+        {
+          "timestamp": "2026-05-08T14:03:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-08T14:04:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 38 (medium)."
+        },
+        {
+          "timestamp": "2026-05-08T14:05:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Compliance review."
+        },
+        {
+          "timestamp": "2026-05-08T14:06:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Verify supplier bank details before payment release."
+        },
+        {
+          "timestamp": "2026-05-08T14:07:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-008",
+      "document_type": "invoice",
+      "source_channel": "Supplier Portal",
+      "vendor_name": "Lyon Industrial SARL",
+      "vendor_country": "FR",
+      "invoice_number": "FR-90221",
+      "iban": "FR7630006000011234567890189",
+      "vat_id": "FR40303265045",
+      "po_number": "PO-45001238",
+      "amount": 12750.9,
+      "currency": "EUR",
+      "due_date": "2026-05-16",
+      "received_at": "2026-05-08T15:17:00Z",
+      "line_items_count": 9,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.84,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "medium",
+          "message": "Foreign VAT ID captured for manual plausibility review."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 18,
+        "risk_level": "low",
+        "explanation": "Risk driven by high_amount_threshold, foreign_vendor_country.",
+        "top_risk_factors": [
+          {
+            "factor": "high_amount_threshold",
+            "weight": 10,
+            "detail": "Amount is at or above 10000 EUR."
+          },
+          {
+            "factor": "foreign_vendor_country",
+            "weight": 8,
+            "detail": "Vendor is outside the domestic country profile."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Compliance review",
+        "routing_reason": "Supplier master data or cross-border compliance needs review.",
+        "next_best_action": "Verify supplier identity, tax data, and bank details before release."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Route is Compliance review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Route to Compliance review and follow the suggested next action."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-08T15:17:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Supplier Portal from Lyon Industrial SARL."
+        },
+        {
+          "timestamp": "2026-05-08T15:19:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.84."
+        },
+        {
+          "timestamp": "2026-05-08T15:20:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-08T15:21:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 18 (low)."
+        },
+        {
+          "timestamp": "2026-05-08T15:22:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Compliance review."
+        },
+        {
+          "timestamp": "2026-05-08T15:23:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Route to Compliance review and follow the suggested next action."
+        },
+        {
+          "timestamp": "2026-05-08T15:24:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-009",
+      "document_type": "invoice",
+      "source_channel": "Email",
+      "vendor_name": "Spreewald Catering KG",
+      "vendor_country": "DE",
+      "invoice_number": "SC-2026-300",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE666777888",
+      "po_number": "PO-45001239",
+      "amount": 1120.5,
+      "currency": "EUR",
+      "due_date": "2026-05-12",
+      "received_at": "2026-05-08T16:06:00Z",
+      "line_items_count": 7,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.93,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "failed",
+          "severity": "critical",
+          "message": "Potential duplicate document detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 32,
+        "risk_level": "medium",
+        "explanation": "Risk driven by duplicate_suspicion, urgent_due_date.",
+        "top_risk_factors": [
+          {
+            "factor": "duplicate_suspicion",
+            "weight": 24,
+            "detail": "Duplicate signal is active."
+          },
+          {
+            "factor": "urgent_due_date",
+            "weight": 8,
+            "detail": "Due date is within the urgent processing window."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Blocked",
+        "routing_reason": "Critical duplicate or extreme risk prevents ERP export.",
+        "next_best_action": "Block posting, keep audit evidence, and request human investigation."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Potential duplicate document detected.",
+          "Route is Blocked, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Block posting until the duplicate candidate is investigated."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-08T16:06:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Email from Spreewald Catering KG."
+        },
+        {
+          "timestamp": "2026-05-08T16:08:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.93."
+        },
+        {
+          "timestamp": "2026-05-08T16:09:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-08T16:10:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 32 (medium)."
+        },
+        {
+          "timestamp": "2026-05-08T16:11:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Blocked."
+        },
+        {
+          "timestamp": "2026-05-08T16:12:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Block posting until the duplicate candidate is investigated."
+        },
+        {
+          "timestamp": "2026-05-08T16:13:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-010",
+      "document_type": "delivery_note",
+      "source_channel": "PDF Upload",
+      "vendor_name": "Elbe Medical Supplies GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE777888999",
+      "po_number": "",
+      "amount": 540.0,
+      "currency": "EUR",
+      "due_date": "2026-05-21",
+      "received_at": "2026-05-08T16:45:00Z",
+      "line_items_count": 11,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.76,
+        "completeness": 1.0,
+        "missing_fields": [
+          "po_number"
+        ],
+        "low_confidence_fields": [
+          "iban",
+          "invoice_number",
+          "po_number",
+          "vat_id"
+        ],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "failed",
+          "severity": "high",
+          "message": "Missing required fields: po_number."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "failed",
+          "severity": "high",
+          "message": "PO number is required before ERP export."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 22,
+        "risk_level": "low",
+        "explanation": "Risk driven by low_extraction_confidence, missing_required_fields.",
+        "top_risk_factors": [
+          {
+            "factor": "low_extraction_confidence",
+            "weight": 14,
+            "detail": "Extraction confidence is 0.76."
+          },
+          {
+            "factor": "missing_required_fields",
+            "weight": 8,
+            "detail": "1 field(s) require completion."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Procurement review",
+        "routing_reason": "Purchase order reference is missing for a PO-controlled document.",
+        "next_best_action": "Request or match the PO number before financial posting."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Missing required fields: po_number.",
+          "PO number is required before ERP export.",
+          "Route is Procurement review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Request missing PO number from supplier or procurement before ERP export."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-08T16:45:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via PDF Upload from Elbe Medical Supplies GmbH."
+        },
+        {
+          "timestamp": "2026-05-08T16:47:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.76."
+        },
+        {
+          "timestamp": "2026-05-08T16:48:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-08T16:49:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 22 (low)."
+        },
+        {
+          "timestamp": "2026-05-08T16:50:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Procurement review."
+        },
+        {
+          "timestamp": "2026-05-08T16:51:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Request missing PO number from supplier or procurement before ERP export."
+        },
+        {
+          "timestamp": "2026-05-08T16:52:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-011",
+      "document_type": "purchase_order",
+      "source_channel": "DMS",
+      "vendor_name": "Mainhattan Facility GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE888999000",
+      "po_number": "PO-45001241",
+      "amount": 9350.0,
+      "currency": "EUR",
+      "due_date": "2026-06-07",
+      "received_at": "2026-05-09T08:35:00Z",
+      "line_items_count": 13,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.97,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 0,
+        "risk_level": "low",
+        "explanation": "Low operational risk; document can follow standard processing.",
+        "top_risk_factors": []
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": true,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [],
+        "export_payload_preview": {
+          "document_id": "DOC-2026-011",
+          "document_type": "purchase_order",
+          "vendor_name": "Mainhattan Facility GmbH",
+          "invoice_number": "",
+          "po_number": "PO-45001241",
+          "amount": 9350.0,
+          "currency": "EUR",
+          "due_date": "2026-06-07",
+          "iban": "DE89370400440532013000",
+          "vat_id": "DE888999000",
+          "line_items_count": 13
+        }
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-09T08:35:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via DMS from Mainhattan Facility GmbH."
+        },
+        {
+          "timestamp": "2026-05-09T08:37:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.97."
+        },
+        {
+          "timestamp": "2026-05-09T08:38:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-09T08:39:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 0 (low)."
+        },
+        {
+          "timestamp": "2026-05-09T08:40:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-09T08:41:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-09T08:42:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export prepared."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-012",
+      "document_type": "invoice",
+      "source_channel": "Supplier Portal",
+      "vendor_name": "Tirol Sensorik GmbH",
+      "vendor_country": "AT",
+      "invoice_number": "AT-2026-771",
+      "iban": "AT611904300234573201",
+      "vat_id": "ATU12345678",
+      "po_number": "PO-45001242",
+      "amount": 4380.1,
+      "currency": "EUR",
+      "due_date": "2026-05-28",
+      "received_at": "2026-05-09T09:14:00Z",
+      "line_items_count": 5,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.89,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "medium",
+          "message": "Foreign VAT ID captured for manual plausibility review."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 8,
+        "risk_level": "low",
+        "explanation": "Risk driven by foreign_vendor_country.",
+        "top_risk_factors": [
+          {
+            "factor": "foreign_vendor_country",
+            "weight": 8,
+            "detail": "Vendor is outside the domestic country profile."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Compliance review",
+        "routing_reason": "Supplier master data or cross-border compliance needs review.",
+        "next_best_action": "Verify supplier identity, tax data, and bank details before release."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Route is Compliance review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Route to Compliance review and follow the suggested next action."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-09T09:14:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Supplier Portal from Tirol Sensorik GmbH."
+        },
+        {
+          "timestamp": "2026-05-09T09:16:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.89."
+        },
+        {
+          "timestamp": "2026-05-09T09:17:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-09T09:18:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 8 (low)."
+        },
+        {
+          "timestamp": "2026-05-09T09:19:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Compliance review."
+        },
+        {
+          "timestamp": "2026-05-09T09:20:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Route to Compliance review and follow the suggested next action."
+        },
+        {
+          "timestamp": "2026-05-09T09:21:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-013",
+      "document_type": "invoice",
+      "source_channel": "Email",
+      "vendor_name": "Köln Energieberatung GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "KE-2026-018",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE999000111",
+      "po_number": "PO-45001243",
+      "amount": 26800.0,
+      "currency": "EUR",
+      "due_date": "2026-05-15",
+      "received_at": "2026-05-09T10:05:00Z",
+      "line_items_count": 1,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.92,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 18,
+        "risk_level": "low",
+        "explanation": "Risk driven by high_amount_threshold, urgent_due_date.",
+        "top_risk_factors": [
+          {
+            "factor": "high_amount_threshold",
+            "weight": 10,
+            "detail": "Amount is at or above 10000 EUR."
+          },
+          {
+            "factor": "urgent_due_date",
+            "weight": 8,
+            "detail": "Due date is within the urgent processing window."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": true,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [],
+        "export_payload_preview": {
+          "document_id": "DOC-2026-013",
+          "document_type": "invoice",
+          "vendor_name": "Köln Energieberatung GmbH",
+          "invoice_number": "KE-2026-018",
+          "po_number": "PO-45001243",
+          "amount": 26800.0,
+          "currency": "EUR",
+          "due_date": "2026-05-15",
+          "iban": "DE89370400440532013000",
+          "vat_id": "DE999000111",
+          "line_items_count": 1
+        }
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-09T10:05:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Email from Köln Energieberatung GmbH."
+        },
+        {
+          "timestamp": "2026-05-09T10:07:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.92."
+        },
+        {
+          "timestamp": "2026-05-09T10:08:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-09T10:09:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 18 (low)."
+        },
+        {
+          "timestamp": "2026-05-09T10:10:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-09T10:11:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-09T10:12:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export prepared."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-014",
+      "document_type": "invoice",
+      "source_channel": "PDF Upload",
+      "vendor_name": "Prag Process Automation s.r.o.",
+      "vendor_country": "CZ",
+      "invoice_number": "CZ-44091",
+      "iban": "CZ6508000000192000145399",
+      "vat_id": "CZ12345678",
+      "po_number": "PO-45001244",
+      "amount": 3310.6,
+      "currency": "EUR",
+      "due_date": "2026-05-19",
+      "received_at": "2026-05-09T11:12:00Z",
+      "line_items_count": 6,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.81,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [
+          "iban",
+          "invoice_number",
+          "vat_id"
+        ],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "medium",
+          "message": "Foreign VAT ID captured for manual plausibility review."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "failed",
+          "severity": "high",
+          "message": "Amount mismatch against purchase order or delivery note."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 26,
+        "risk_level": "medium",
+        "explanation": "Risk driven by amount_mismatch, foreign_vendor_country.",
+        "top_risk_factors": [
+          {
+            "factor": "amount_mismatch",
+            "weight": 18,
+            "detail": "Amount mismatch requires reconciliation."
+          },
+          {
+            "factor": "foreign_vendor_country",
+            "weight": 8,
+            "detail": "Vendor is outside the domestic country profile."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Compliance review",
+        "routing_reason": "Supplier master data or cross-border compliance needs review.",
+        "next_best_action": "Verify supplier identity, tax data, and bank details before release."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Amount mismatch against purchase order or delivery note.",
+          "Route is Compliance review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Send document to Finance review due to amount mismatch."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-09T11:12:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via PDF Upload from Prag Process Automation s.r.o.."
+        },
+        {
+          "timestamp": "2026-05-09T11:14:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.81."
+        },
+        {
+          "timestamp": "2026-05-09T11:15:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-09T11:16:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 26 (medium)."
+        },
+        {
+          "timestamp": "2026-05-09T11:17:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Compliance review."
+        },
+        {
+          "timestamp": "2026-05-09T11:18:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Send document to Finance review due to amount mismatch."
+        },
+        {
+          "timestamp": "2026-05-09T11:19:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-015",
+      "document_type": "credit_note",
+      "source_channel": "DMS",
+      "vendor_name": "Ruhrstahl Handel GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "GS-2026-097",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE101202303",
+      "po_number": "PO-45001245",
+      "amount": -880.0,
+      "currency": "EUR",
+      "due_date": "2026-06-01",
+      "received_at": "2026-05-09T12:30:00Z",
+      "line_items_count": 2,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.87,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 0,
+        "risk_level": "low",
+        "explanation": "Low operational risk; document can follow standard processing.",
+        "top_risk_factors": []
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": true,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [],
+        "export_payload_preview": {
+          "document_id": "DOC-2026-015",
+          "document_type": "credit_note",
+          "vendor_name": "Ruhrstahl Handel GmbH",
+          "invoice_number": "GS-2026-097",
+          "po_number": "PO-45001245",
+          "amount": -880.0,
+          "currency": "EUR",
+          "due_date": "2026-06-01",
+          "iban": "DE89370400440532013000",
+          "vat_id": "DE101202303",
+          "line_items_count": 2
+        }
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-09T12:30:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via DMS from Ruhrstahl Handel GmbH."
+        },
+        {
+          "timestamp": "2026-05-09T12:32:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.87."
+        },
+        {
+          "timestamp": "2026-05-09T12:33:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-09T12:34:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 0 (low)."
+        },
+        {
+          "timestamp": "2026-05-09T12:35:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-09T12:36:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-09T12:37:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export prepared."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-016",
+      "document_type": "invoice",
+      "source_channel": "Email",
+      "vendor_name": "Black Forest Tools GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "BFT-9217",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE12345",
+      "po_number": "PO-45001246",
+      "amount": 760.0,
+      "currency": "EUR",
+      "due_date": "2026-05-17",
+      "received_at": "2026-05-09T13:02:00Z",
+      "line_items_count": 4,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.83,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "failed",
+          "severity": "high",
+          "message": "German vendor VAT ID must match DE plus 9 digits."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 12,
+        "risk_level": "low",
+        "explanation": "Risk driven by invalid_vat_id.",
+        "top_risk_factors": [
+          {
+            "factor": "invalid_vat_id",
+            "weight": 12,
+            "detail": "VAT ID failed the expected format validation."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Compliance review",
+        "routing_reason": "Supplier master data or cross-border compliance needs review.",
+        "next_best_action": "Verify supplier identity, tax data, and bank details before release."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "German vendor VAT ID must match DE plus 9 digits.",
+          "Route is Compliance review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Validate supplier VAT ID and update master data if needed."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-09T13:02:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Email from Black Forest Tools GmbH."
+        },
+        {
+          "timestamp": "2026-05-09T13:04:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.83."
+        },
+        {
+          "timestamp": "2026-05-09T13:05:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-09T13:06:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 12 (low)."
+        },
+        {
+          "timestamp": "2026-05-09T13:07:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Compliance review."
+        },
+        {
+          "timestamp": "2026-05-09T13:08:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Validate supplier VAT ID and update master data if needed."
+        },
+        {
+          "timestamp": "2026-05-09T13:09:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-017",
+      "document_type": "invoice",
+      "source_channel": "Supplier Portal",
+      "vendor_name": "Benelux Office BV",
+      "vendor_country": "NL",
+      "invoice_number": "NL-2026-501",
+      "iban": "NL91ABNA0417164300",
+      "vat_id": "NL123456789B01",
+      "po_number": "PO-45001247",
+      "amount": 2180.0,
+      "currency": "EUR",
+      "due_date": "2026-05-24",
+      "received_at": "2026-05-09T13:48:00Z",
+      "line_items_count": 3,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.95,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "medium",
+          "message": "Foreign VAT ID captured for manual plausibility review."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 8,
+        "risk_level": "low",
+        "explanation": "Risk driven by foreign_vendor_country.",
+        "top_risk_factors": [
+          {
+            "factor": "foreign_vendor_country",
+            "weight": 8,
+            "detail": "Vendor is outside the domestic country profile."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Compliance review",
+        "routing_reason": "Supplier master data or cross-border compliance needs review.",
+        "next_best_action": "Verify supplier identity, tax data, and bank details before release."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Route is Compliance review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Route to Compliance review and follow the suggested next action."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-09T13:48:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Supplier Portal from Benelux Office BV."
+        },
+        {
+          "timestamp": "2026-05-09T13:50:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.95."
+        },
+        {
+          "timestamp": "2026-05-09T13:51:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-09T13:52:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 8 (low)."
+        },
+        {
+          "timestamp": "2026-05-09T13:53:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Compliance review."
+        },
+        {
+          "timestamp": "2026-05-09T13:54:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Route to Compliance review and follow the suggested next action."
+        },
+        {
+          "timestamp": "2026-05-09T13:55:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-018",
+      "document_type": "invoice",
+      "source_channel": "DMS",
+      "vendor_name": "Isar Facility Services GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "IFS-2026-092",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE202303404",
+      "po_number": "PO-45001248",
+      "amount": 1460.25,
+      "currency": "USD",
+      "due_date": "2026-05-29",
+      "received_at": "2026-05-09T14:11:00Z",
+      "line_items_count": 8,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.85,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "failed",
+          "severity": "medium",
+          "message": "Currency is not supported for automated ERP export."
+        }
+      ],
+      "risk": {
+        "risk_score": 10,
+        "risk_level": "low",
+        "explanation": "Risk driven by unsupported_currency.",
+        "top_risk_factors": [
+          {
+            "factor": "unsupported_currency",
+            "weight": 10,
+            "detail": "Currency prevents straight-through ERP export."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Currency is not supported for automated ERP export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-09T14:11:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via DMS from Isar Facility Services GmbH."
+        },
+        {
+          "timestamp": "2026-05-09T14:13:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.85."
+        },
+        {
+          "timestamp": "2026-05-09T14:14:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-09T14:15:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 10 (low)."
+        },
+        {
+          "timestamp": "2026-05-09T14:16:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-09T14:17:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-09T14:18:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-019",
+      "document_type": "delivery_note",
+      "source_channel": "Email",
+      "vendor_name": "Weser Print Solutions GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE303404505",
+      "po_number": "PO-45001249",
+      "amount": 390.9,
+      "currency": "EUR",
+      "due_date": "2026-05-30",
+      "received_at": "2026-05-09T15:20:00Z",
+      "line_items_count": 10,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.92,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 0,
+        "risk_level": "low",
+        "explanation": "Low operational risk; document can follow standard processing.",
+        "top_risk_factors": []
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": true,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [],
+        "export_payload_preview": {
+          "document_id": "DOC-2026-019",
+          "document_type": "delivery_note",
+          "vendor_name": "Weser Print Solutions GmbH",
+          "invoice_number": "",
+          "po_number": "PO-45001249",
+          "amount": 390.9,
+          "currency": "EUR",
+          "due_date": "2026-05-30",
+          "iban": "DE89370400440532013000",
+          "vat_id": "DE303404505",
+          "line_items_count": 10
+        }
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-09T15:20:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Email from Weser Print Solutions GmbH."
+        },
+        {
+          "timestamp": "2026-05-09T15:22:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.92."
+        },
+        {
+          "timestamp": "2026-05-09T15:23:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-09T15:24:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 0 (low)."
+        },
+        {
+          "timestamp": "2026-05-09T15:25:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-09T15:26:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-09T15:27:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export prepared."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-020",
+      "document_type": "invoice",
+      "source_channel": "PDF Upload",
+      "vendor_name": "Bremen Fleet Parts GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "BFP-11882",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE404505606",
+      "po_number": "PO-45001250",
+      "amount": 11890.4,
+      "currency": "EUR",
+      "due_date": "2026-05-11",
+      "received_at": "2026-05-09T16:08:00Z",
+      "line_items_count": 15,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.78,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [
+          "iban",
+          "invoice_number",
+          "vat_id"
+        ],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "failed",
+          "severity": "high",
+          "message": "Amount mismatch against purchase order or delivery note."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 50,
+        "risk_level": "high",
+        "explanation": "Risk driven by amount_mismatch, low_extraction_confidence, high_amount_threshold, urgent_due_date.",
+        "top_risk_factors": [
+          {
+            "factor": "amount_mismatch",
+            "weight": 18,
+            "detail": "Amount mismatch requires reconciliation."
+          },
+          {
+            "factor": "low_extraction_confidence",
+            "weight": 14,
+            "detail": "Extraction confidence is 0.78."
+          },
+          {
+            "factor": "high_amount_threshold",
+            "weight": 10,
+            "detail": "Amount is at or above 10000 EUR."
+          },
+          {
+            "factor": "urgent_due_date",
+            "weight": 8,
+            "detail": "Due date is within the urgent processing window."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Finance review",
+        "routing_reason": "Financial reconciliation is required before export.",
+        "next_best_action": "Compare amount, line items, and approval limits with source documents."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Amount mismatch against purchase order or delivery note.",
+          "Route is Finance review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Send document to Finance review due to amount mismatch.",
+        "Prioritize human review because the document has elevated operational risk."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-09T16:08:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via PDF Upload from Bremen Fleet Parts GmbH."
+        },
+        {
+          "timestamp": "2026-05-09T16:10:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.78."
+        },
+        {
+          "timestamp": "2026-05-09T16:11:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-09T16:12:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 50 (high)."
+        },
+        {
+          "timestamp": "2026-05-09T16:13:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Finance review."
+        },
+        {
+          "timestamp": "2026-05-09T16:14:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Send document to Finance review due to amount mismatch."
+        },
+        {
+          "timestamp": "2026-05-09T16:15:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-021",
+      "document_type": "purchase_order",
+      "source_channel": "Supplier Portal",
+      "vendor_name": "Ostsee Analytics GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE505606707",
+      "po_number": "PO-45001251",
+      "amount": 5100.0,
+      "currency": "EUR",
+      "due_date": "2026-06-09",
+      "received_at": "2026-05-10T08:18:00Z",
+      "line_items_count": 6,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.98,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 0,
+        "risk_level": "low",
+        "explanation": "Low operational risk; document can follow standard processing.",
+        "top_risk_factors": []
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": true,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [],
+        "export_payload_preview": {
+          "document_id": "DOC-2026-021",
+          "document_type": "purchase_order",
+          "vendor_name": "Ostsee Analytics GmbH",
+          "invoice_number": "",
+          "po_number": "PO-45001251",
+          "amount": 5100.0,
+          "currency": "EUR",
+          "due_date": "2026-06-09",
+          "iban": "DE89370400440532013000",
+          "vat_id": "DE505606707",
+          "line_items_count": 6
+        }
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-10T08:18:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Supplier Portal from Ostsee Analytics GmbH."
+        },
+        {
+          "timestamp": "2026-05-10T08:20:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.98."
+        },
+        {
+          "timestamp": "2026-05-10T08:21:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-10T08:22:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 0 (low)."
+        },
+        {
+          "timestamp": "2026-05-10T08:23:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-10T08:24:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-10T08:25:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export prepared."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-022",
+      "document_type": "invoice",
+      "source_channel": "Email",
+      "vendor_name": "Milan Design SRL",
+      "vendor_country": "IT",
+      "invoice_number": "IT-77431",
+      "iban": "IT60X0542811101000000123456",
+      "vat_id": "IT12345678901",
+      "po_number": "",
+      "amount": 2480.0,
+      "currency": "EUR",
+      "due_date": "2026-05-26",
+      "received_at": "2026-05-10T09:02:00Z",
+      "line_items_count": 4,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.74,
+        "completeness": 1.0,
+        "missing_fields": [
+          "po_number"
+        ],
+        "low_confidence_fields": [
+          "iban",
+          "invoice_number",
+          "po_number",
+          "vat_id"
+        ],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "failed",
+          "severity": "high",
+          "message": "Missing required fields: po_number."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "medium",
+          "message": "Foreign VAT ID captured for manual plausibility review."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "failed",
+          "severity": "high",
+          "message": "PO number is required before ERP export."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 30,
+        "risk_level": "medium",
+        "explanation": "Risk driven by low_extraction_confidence, missing_required_fields, foreign_vendor_country.",
+        "top_risk_factors": [
+          {
+            "factor": "low_extraction_confidence",
+            "weight": 14,
+            "detail": "Extraction confidence is 0.74."
+          },
+          {
+            "factor": "missing_required_fields",
+            "weight": 8,
+            "detail": "1 field(s) require completion."
+          },
+          {
+            "factor": "foreign_vendor_country",
+            "weight": 8,
+            "detail": "Vendor is outside the domestic country profile."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Compliance review",
+        "routing_reason": "Supplier master data or cross-border compliance needs review.",
+        "next_best_action": "Verify supplier identity, tax data, and bank details before release."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Missing required fields: po_number.",
+          "PO number is required before ERP export.",
+          "Route is Compliance review, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Request missing PO number from supplier or procurement before ERP export."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-10T09:02:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via Email from Milan Design SRL."
+        },
+        {
+          "timestamp": "2026-05-10T09:04:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.74."
+        },
+        {
+          "timestamp": "2026-05-10T09:05:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-10T09:06:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 30 (medium)."
+        },
+        {
+          "timestamp": "2026-05-10T09:07:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Compliance review."
+        },
+        {
+          "timestamp": "2026-05-10T09:08:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Request missing PO number from supplier or procurement before ERP export."
+        },
+        {
+          "timestamp": "2026-05-10T09:09:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-023",
+      "document_type": "invoice",
+      "source_channel": "DMS",
+      "vendor_name": "Havel Security Systems GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "HSS-2026-400",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE606707808",
+      "po_number": "PO-45001253",
+      "amount": 880.0,
+      "currency": "EUR",
+      "due_date": "2026-05-23",
+      "received_at": "2026-05-10T10:15:00Z",
+      "line_items_count": 2,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.93,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "passed",
+          "severity": "low",
+          "message": "No amount mismatch flagged."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "passed",
+          "severity": "low",
+          "message": "No duplicate signal detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 0,
+        "risk_level": "low",
+        "explanation": "Low operational risk; document can follow standard processing.",
+        "top_risk_factors": []
+      },
+      "routing": {
+        "route": "Auto export to ERP",
+        "routing_reason": "Low-risk document passed validation checks.",
+        "next_best_action": "Export to ERP and retain audit trail."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": true,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [],
+        "export_payload_preview": {
+          "document_id": "DOC-2026-023",
+          "document_type": "invoice",
+          "vendor_name": "Havel Security Systems GmbH",
+          "invoice_number": "HSS-2026-400",
+          "po_number": "PO-45001253",
+          "amount": 880.0,
+          "currency": "EUR",
+          "due_date": "2026-05-23",
+          "iban": "DE89370400440532013000",
+          "vat_id": "DE606707808",
+          "line_items_count": 2
+        }
+      },
+      "recommendations": [
+        "Auto-export low-risk document and retain the audit trace."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-10T10:15:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via DMS from Havel Security Systems GmbH."
+        },
+        {
+          "timestamp": "2026-05-10T10:17:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.93."
+        },
+        {
+          "timestamp": "2026-05-10T10:18:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-10T10:19:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 0 (low)."
+        },
+        {
+          "timestamp": "2026-05-10T10:20:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Auto export to ERP."
+        },
+        {
+          "timestamp": "2026-05-10T10:21:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Auto-export low-risk document and retain the audit trace."
+        },
+        {
+          "timestamp": "2026-05-10T10:22:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export prepared."
+        }
+      ]
+    },
+    {
+      "document_id": "DOC-2026-024",
+      "document_type": "invoice",
+      "source_channel": "PDF Upload",
+      "vendor_name": "Lausitz Engineering GmbH",
+      "vendor_country": "DE",
+      "invoice_number": "LE-2026-850",
+      "iban": "DE89370400440532013000",
+      "vat_id": "DE707808909",
+      "po_number": "PO-45001254",
+      "amount": 37600.0,
+      "currency": "EUR",
+      "due_date": "2026-05-13",
+      "received_at": "2026-05-10T11:40:00Z",
+      "line_items_count": 18,
+      "extraction": {
+        "extraction_status": "completed",
+        "confidence": 0.69,
+        "completeness": 1.0,
+        "missing_fields": [],
+        "low_confidence_fields": [
+          "iban",
+          "invoice_number",
+          "vat_id"
+        ],
+        "metadata": {
+          "engine": "deterministic_ocr_llm_simulator",
+          "model_profile": "portfolio-demo-v1",
+          "normalized_fields": [
+            "document_type",
+            "vendor_country",
+            "currency",
+            "iban",
+            "vat_id",
+            "amount"
+          ]
+        }
+      },
+      "validation_results": [
+        {
+          "rule": "required_fields_completeness",
+          "status": "passed",
+          "severity": "low",
+          "message": "Required fields are complete."
+        },
+        {
+          "rule": "iban_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "IBAN format looks valid."
+        },
+        {
+          "rule": "vat_id_format",
+          "status": "passed",
+          "severity": "low",
+          "message": "German VAT ID format looks valid."
+        },
+        {
+          "rule": "po_number_presence",
+          "status": "passed",
+          "severity": "low",
+          "message": "PO number requirement is satisfied."
+        },
+        {
+          "rule": "amount_match",
+          "status": "failed",
+          "severity": "high",
+          "message": "Amount mismatch against purchase order or delivery note."
+        },
+        {
+          "rule": "duplicate_check",
+          "status": "failed",
+          "severity": "critical",
+          "message": "Potential duplicate document detected."
+        },
+        {
+          "rule": "supported_currency",
+          "status": "passed",
+          "severity": "low",
+          "message": "Currency is supported for this demo ERP flow."
+        }
+      ],
+      "risk": {
+        "risk_score": 74,
+        "risk_level": "high",
+        "explanation": "Risk driven by duplicate_suspicion, amount_mismatch, low_extraction_confidence, high_amount_threshold.",
+        "top_risk_factors": [
+          {
+            "factor": "duplicate_suspicion",
+            "weight": 24,
+            "detail": "Duplicate signal is active."
+          },
+          {
+            "factor": "amount_mismatch",
+            "weight": 18,
+            "detail": "Amount mismatch requires reconciliation."
+          },
+          {
+            "factor": "low_extraction_confidence",
+            "weight": 14,
+            "detail": "Extraction confidence is 0.69."
+          },
+          {
+            "factor": "high_amount_threshold",
+            "weight": 10,
+            "detail": "Amount is at or above 10000 EUR."
+          }
+        ]
+      },
+      "routing": {
+        "route": "Blocked",
+        "routing_reason": "Critical duplicate or extreme risk prevents ERP export.",
+        "next_best_action": "Block posting, keep audit evidence, and request human investigation."
+      },
+      "erp_export_readiness": {
+        "ready_for_export": false,
+        "target_system": "SAP S/4HANA",
+        "blocking_reasons": [
+          "Amount mismatch against purchase order or delivery note.",
+          "Potential duplicate document detected.",
+          "Route is Blocked, not auto export."
+        ],
+        "export_payload_preview": {}
+      },
+      "recommendations": [
+        "Send document to Finance review due to amount mismatch.",
+        "Block posting until the duplicate candidate is investigated.",
+        "Prioritize human review because the document has elevated operational risk."
+      ],
+      "audit_trail": [
+        {
+          "timestamp": "2026-05-10T11:40:00Z",
+          "actor": "system",
+          "action": "document_received",
+          "detail": "Received via PDF Upload from Lausitz Engineering GmbH."
+        },
+        {
+          "timestamp": "2026-05-10T11:42:00Z",
+          "actor": "ai_engine",
+          "action": "extraction_completed",
+          "detail": "Extraction completed with confidence 0.69."
+        },
+        {
+          "timestamp": "2026-05-10T11:43:00Z",
+          "actor": "validation_engine",
+          "action": "validation_checks_executed",
+          "detail": "Executed 7 validation checks."
+        },
+        {
+          "timestamp": "2026-05-10T11:44:00Z",
+          "actor": "validation_engine",
+          "action": "risk_score_calculated",
+          "detail": "Risk score 74 (high)."
+        },
+        {
+          "timestamp": "2026-05-10T11:45:00Z",
+          "actor": "system",
+          "action": "route_assigned",
+          "detail": "Assigned route: Blocked."
+        },
+        {
+          "timestamp": "2026-05-10T11:46:00Z",
+          "actor": "ai_engine",
+          "action": "recommendation_generated",
+          "detail": "Send document to Finance review due to amount mismatch."
+        },
+        {
+          "timestamp": "2026-05-10T11:47:00Z",
+          "actor": "system",
+          "action": "erp_export_prepared_or_blocked",
+          "detail": "ERP export blocked with documented reasons."
+        }
+      ]
+    }
+  ]
+}

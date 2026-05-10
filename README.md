@@ -58,6 +58,36 @@ For Vercel/Netlify: import the GitHub repository and use:
 - Build command: `npm run build`
 - Publish directory: `dist`
 
+
+## Python automation engine
+
+This project includes a Python simulation engine that demonstrates the operational logic behind the dashboard:
+
+- document intake
+- OCR/LLM-style field extraction simulation
+- validation rules
+- risk scoring
+- human review routing
+- audit trail
+- ERP export readiness
+- AI recommendations
+
+The frontend is a static product demo. The Python engine simulates the business logic and generates structured output data for the case study. Python does not need to run on GitHub Pages; it writes `outputs/demo_results.json` as static evidence that can be referenced by the README or consumed by the frontend later.
+
+Run it locally:
+
+```bash
+python -m python_engine.main
+```
+
+Run tests:
+
+```bash
+pytest
+```
+
+The automation layer is intentionally lightweight and portfolio-friendly: standard-library pipeline modules, deterministic sample data, explainable validation/risk logic, and clean JSON output without databases, APIs, Docker, Flask, FastAPI, or heavy ML dependencies.
+
 ## Portfolio note
 
 Portfolio case study by Oleksandr Stebeniev · 2026.
