@@ -1,0 +1,17 @@
+{
+  "required_fields": [
+    "document_id",
+    "document_type",
+    "vendor_name",
+    "vendor_country",
+    "amount",
+    "currency",
+    "received_at"
+  ],
+  "po_required_document_types": ["invoice", "delivery_note"],
+  "supported_currencies": ["EUR"],
+  "high_amount_threshold": 10000,
+  "urgent_due_days": 5,
+  "domestic_country": "DE",
+  "minimum_confidence": 0.8
+}
