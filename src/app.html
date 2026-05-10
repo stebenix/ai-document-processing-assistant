@@ -121,9 +121,9 @@
 </div>
 <div class="kpi-bottom">
 <div>
-<div class="kpi-label">Processed this month</div>
-<div class="kpi-value">1,248</div>
-<div class="kpi-caption">Invoices and delivery notes normalized</div>
+<div class="kpi-label">Processed in engine batch</div>
+<div class="kpi-value" data-engine-field="total_documents">1,248</div>
+<div class="kpi-caption">Invoices and documents normalized</div>
 </div>
 <svg class="sparkline" fill="none" preserveaspectratio="none" viewbox="0 0 100 40"><path d="M2 34 C12 30 18 22 27 25 C36 28 39 16 48 18 C60 20 61 10 72 12 C82 14 88 8 98 5" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path></svg>
 </div>
@@ -150,7 +150,7 @@
 <div class="kpi-bottom">
 <div>
 <div class="kpi-label">Extraction confidence</div>
-<div class="kpi-value">93.4%</div>
+<div class="kpi-value" data-engine-field="average_confidence">93.4%</div>
 <div class="kpi-caption">Average field confidence score</div>
 </div>
 <svg class="sparkline" fill="none" preserveaspectratio="none" viewbox="0 0 100 40"><path d="M2 33 C11 26 18 28 26 18 C33 9 44 17 52 14 C60 11 66 21 74 14 C83 7 88 15 98 5" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path></svg>
@@ -164,8 +164,8 @@
 <div class="kpi-bottom">
 <div>
 <div class="kpi-label">Needs human review</div>
-<div class="kpi-value">5 / 12</div>
-<div class="kpi-caption">2 payment · 2 VAT · 1 PO exception</div>
+<div class="kpi-value" data-engine-field="review_ratio">5 / 12</div>
+<div class="kpi-caption" data-engine-field="review_caption">2 payment · 2 VAT · 1 PO exception</div>
 </div>
 </div>
 </article>
@@ -804,14 +804,14 @@
 </div>
 <div class="metric-band">
 <div class="metric-tile"><div class="metric-label">Manual work saved</div><div class="metric-value">42 h</div><div class="metric-note">Estimated monthly AP team time</div></div>
-<div class="metric-tile"><div class="metric-label">Review rate</div><div class="metric-value">8.1%</div><div class="metric-note">Only risky cases reach humans</div></div>
-<div class="metric-tile"><div class="metric-label">Export readiness</div><div class="metric-value">91.9%</div><div class="metric-note">Ready or exported after validation</div></div>
-<div class="metric-tile"><div class="metric-label">Prevented risk</div><div class="metric-value">€18.4k</div><div class="metric-note">Potential payment/tax issues blocked</div></div>
+<div class="metric-tile"><div class="metric-label">Review rate</div><div class="metric-value" data-engine-field="review_rate">8.1%</div><div class="metric-note">Only risky cases reach humans</div></div>
+<div class="metric-tile"><div class="metric-label">Auto export rate</div><div class="metric-value" data-engine-field="auto_export_rate">91.9%</div><div class="metric-note">Ready for ERP from generated output</div></div>
+<div class="metric-tile"><div class="metric-label">Average risk</div><div class="metric-value" data-engine-field="average_risk_score">€18.4k</div><div class="metric-note">Risk score from Python engine</div></div>
 </div>
 </section>
 <article class="card kpi primary">
-<div class="kpi-top"><div class="kpi-icon"><svg fill="none" height="16" viewbox="0 0 24 24" width="16"><path d="M4 19V5M4 19h16M8 16l3-4 3 2 5-7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div><span class="kpi-tag">+18%</span></div>
-<div class="kpi-bottom"><div><div class="kpi-label">Monthly volume</div><div class="kpi-value">1,248</div><div class="kpi-caption">Documents processed this month</div></div></div>
+<div class="kpi-top"><div class="kpi-icon"><svg fill="none" height="16" viewbox="0 0 24 24" width="16"><path d="M4 19V5M4 19h16M8 16l3-4 3 2 5-7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div><span class="kpi-tag">Engine</span></div>
+<div class="kpi-bottom"><div><div class="kpi-label">Batch volume</div><div class="kpi-value" data-engine-field="total_documents">1,248</div><div class="kpi-caption">Documents in generated output</div></div></div>
 </article>
 <article class="card kpi"><div class="kpi-top"><div class="kpi-icon"><svg fill="none" height="16" viewbox="0 0 24 24" width="16"><path d="M12 8v4l3 2" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle></svg></div><span class="kpi-tag">-63%</span></div><div class="kpi-bottom"><div><div class="kpi-label">Cycle time reduced</div><div class="kpi-value">4m</div><div class="kpi-caption">Median upload-to-export-ready time</div></div></div></article>
 <article class="card kpi"><div class="kpi-top"><div class="kpi-icon"><svg fill="none" height="16" viewbox="0 0 24 24" width="16"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path></svg></div><span class="kpi-tag">94.1%</span></div><div class="kpi-bottom"><div><div class="kpi-label">Straight-through</div><div class="kpi-value">94%</div><div class="kpi-caption">No manual correction required</div></div></div></article>
@@ -861,12 +861,12 @@
 <section class="card analytics-side-card">
 <div class="card-head">
 <div>
-<h2 class="card-title">Top blocking reasons</h2>
-<div class="card-subtitle">What still prevents documents from moving directly into ERP-ready status.</div>
+<h2 class="card-title">Top validation issues</h2>
+<div class="card-subtitle">Loaded from the generated Python engine output JSON.</div>
 </div>
 <span class="pill warn">Actionable</span>
 </div>
-<div class="reason-list">
+<div class="reason-list" data-engine-validation-issues>
 <div class="reason-row"><div><div class="reason-name">IBAN differs from supplier master</div><div class="reason-meta">Payment risk · finance approval required</div><div class="reason-track"><div class="reason-fill danger" style="width:78%"></div></div></div><div class="reason-value">31%</div></div>
 <div class="reason-row"><div><div class="reason-name">PO reference not found</div><div class="reason-meta">Operations/buyer follow-up needed</div><div class="reason-track"><div class="reason-fill warn" style="width:61%"></div></div></div><div class="reason-value">24%</div></div>
 <div class="reason-row"><div><div class="reason-name">VAT calculation mismatch</div><div class="reason-meta">Tax rule conflict on line items</div><div class="reason-track"><div class="reason-fill warn" style="width:44%"></div></div></div><div class="reason-value">17%</div></div>
@@ -891,11 +891,11 @@
 <section class="card analytics-small-card">
 <div class="card-head">
 <div>
-<h2 class="card-title">SLA health</h2>
-<div class="card-subtitle">Review queues stay measurable and visible.</div>
+<h2 class="card-title">Automation engine summary</h2>
+<div class="card-subtitle">Generated by python_engine/main.py from the latest static JSON copy.</div>
 </div>
 </div>
-<div class="sla-grid">
+<div class="sla-grid" data-engine-routes>
 <div class="sla-item"><div class="sla-top"><div class="sla-name">Finance review</div><div class="sla-value">92%</div></div><div class="sla-track"><div class="sla-fill" style="width:92%"></div></div></div>
 <div class="sla-item"><div class="sla-top"><div class="sla-name">Tax review</div><div class="sla-value">87%</div></div><div class="sla-track"><div class="sla-fill" style="width:87%"></div></div></div>
 <div class="sla-item"><div class="sla-top"><div class="sla-name">PO follow-up</div><div class="sla-value">81%</div></div><div class="sla-track"><div class="sla-fill" style="width:81%"></div></div></div>
@@ -910,12 +910,12 @@
 <h2 class="card-title">Export readiness</h2>
 <div class="card-subtitle">How close the current document set is to safe ERP/DATEV/SAP export.</div>
 </div>
-<span class="pill">12 docs today</span>
+<span class="pill"><span data-engine-field="total_documents">12</span> docs</span>
 </div>
 <div class="export-readiness">
-<div class="readiness-row"><div class="readiness-dot"><svg fill="none" height="13" viewbox="0 0 24 24" width="13"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg></div><div><div class="readiness-title">7 ready for ERP draft export</div><div class="readiness-copy">All extraction and validation rules passed.</div></div><span class="pill good">Ready</span></div>
-<div class="readiness-row"><div class="readiness-dot"><svg fill="none" height="13" viewbox="0 0 24 24" width="13"><path d="M12 8v5M12 17h.01" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle></svg></div><div><div class="readiness-title">3 require human review</div><div class="readiness-copy">Payment or VAT checks need approval before export.</div></div><span class="pill warn">Review</span></div>
-<div class="readiness-row"><div class="readiness-dot"><svg fill="none" height="13" viewbox="0 0 24 24" width="13"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg></div><div><div class="readiness-title">2 blocked from posting</div><div class="readiness-copy">Supplier master mismatch or missing PO reference.</div></div><span class="pill danger">Blocked</span></div>
+<div class="readiness-row"><div class="readiness-dot"><svg fill="none" height="13" viewbox="0 0 24 24" width="13"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg></div><div><div class="readiness-title"><span data-engine-field="auto_export_count">7</span> ready for ERP draft export</div><div class="readiness-copy">All extraction and validation rules passed.</div></div><span class="pill good">Ready</span></div>
+<div class="readiness-row"><div class="readiness-dot"><svg fill="none" height="13" viewbox="0 0 24 24" width="13"><path d="M12 8v5M12 17h.01" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle></svg></div><div><div class="readiness-title"><span data-engine-field="human_review_count">3</span> require human review</div><div class="readiness-copy">Payment or VAT checks need approval before export.</div></div><span class="pill warn">Review</span></div>
+<div class="readiness-row"><div class="readiness-dot"><svg fill="none" height="13" viewbox="0 0 24 24" width="13"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg></div><div><div class="readiness-title"><span data-engine-field="blocked_count">2</span> blocked from posting</div><div class="readiness-copy">Supplier master mismatch or missing PO reference.</div></div><span class="pill danger">Blocked</span></div>
 <div class="readiness-row"><div class="readiness-dot"><svg fill="none" height="12" viewbox="0 0 24 24" width="12"><path d="m9 12 2 2 4-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg></div><div><div class="readiness-title">Audit package complete</div><div class="readiness-copy">Source file, extracted payload and approval log are bundled for export.</div></div><span class="pill good">Ready</span></div>
 <div class="readiness-row"><div class="readiness-dot"><svg fill="none" height="13" viewbox="0 0 24 24" width="13"><path d="M12 8v5M12 17h.01" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle></svg></div><div><div class="readiness-title">1 pending DATEV tax coding</div><div class="readiness-copy">Posting key and tax class need confirmation before export can continue.</div></div><span class="pill warn">Pending</span></div><div class="readiness-row"><div class="readiness-dot"><svg fill="none" height="12" viewbox="0 0 24 24" width="12"><path d="m9 12 2 2 4-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg></div><div><div class="readiness-title">9 mapped to ERP posting schema</div><div class="readiness-copy">Core fields, cost center and payment terms are already aligned to export format.</div></div><span class="pill good">Mapped</span></div><div class="readiness-row"><div class="readiness-dot"><svg fill="none" height="12" viewbox="0 0 24 24" width="12"><path d="m9 12 2 2 4-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg></div><div><div class="readiness-title">Connector handoff window open</div><div class="readiness-copy">SAP / DATEV export jobs are healthy and ready for the next scheduled push.</div></div><span class="pill good">Live</span></div></div>
 </section>
