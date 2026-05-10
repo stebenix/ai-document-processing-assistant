@@ -72,7 +72,18 @@ This project includes a Python simulation engine that demonstrates the operation
 - ERP export readiness
 - AI recommendations
 
-The frontend is a static product demo. The Python engine simulates the business logic and generates structured output data for the case study. Python does not need to run on GitHub Pages; it writes `outputs/demo_results.json` as static evidence that can be referenced by the README or consumed by the frontend later.
+The frontend is a static product demo. The Python engine simulates the business logic and generates structured output data for the case study. Python does not need to run on GitHub Pages; it writes `outputs/demo_results.json` as static evidence and refreshes `public/demo_results.json` as the Vite/GitHub Pages-compatible static frontend copy.
+
+### Static data bridge
+
+The Python engine writes `outputs/demo_results.json`. For the static GitHub Pages dashboard, selected summary values can be exposed to the frontend through a static JSON copy, allowing the UI to display pipeline-generated metrics without a backend runtime. In this project, `outputs/demo_results.json` is the Python-generated source and `public/demo_results.json` is the static frontend copy loaded by the dashboard.
+
+Intended refresh flow:
+
+```bash
+python -m python_engine.main
+npm run build
+```
 
 Run it locally:
 

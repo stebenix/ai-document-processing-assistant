@@ -1,6 +1,7 @@
 import './styles.css';
 import './mobile-fix.css';
 import appHtml from './app.html?raw';
+import { loadDashboardData } from './dashboardData.js';
 
 const root = document.getElementById('root');
 root.innerHTML = appHtml;
@@ -106,3 +107,4 @@ function initPaperloopApp() {
 }
 
 initPaperloopApp();
+loadDashboardData();

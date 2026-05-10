@@ -18,6 +18,7 @@ from python_engine.routing_engine import route_document
 from python_engine.validation_rules import validate_document
 
 DEFAULT_OUTPUT_PATH = Path("outputs/demo_results.json")
+FRONTEND_OUTPUT_PATH = Path("public/demo_results.json")
 
 
 def process_documents(
@@ -113,12 +114,18 @@ def write_results(results: dict[str, Any], output_path: Path = DEFAULT_OUTPUT_PA
         file.write("\n")
 
 
+def write_frontend_copy(results: dict[str, Any]) -> None:
+    """Expose the generated engine output through Vite static assets."""
+    write_results(results, FRONTEND_OUTPUT_PATH)
+
+
 def main() -> None:
     """Run the CLI pipeline and print a short terminal summary."""
     documents = load_sample_documents()
     config = load_validation_config()
     results = process_documents(documents, config)
     write_results(results, DEFAULT_OUTPUT_PATH)
+    write_frontend_copy(results)
 
     summary = results["batch_summary"]
     print(f"Processed {summary['total_documents']} documents")
@@ -127,6 +134,7 @@ def main() -> None:
     print(f"Blocked: {summary['blocked_count']}")
     print(f"Average risk score: {summary['average_risk_score']}")
     print(f"Output written to {DEFAULT_OUTPUT_PATH}")
+    print(f"Frontend copy written to {FRONTEND_OUTPUT_PATH}")
 
 
 if __name__ == "__main__":
