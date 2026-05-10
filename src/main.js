@@ -1,4 +1,5 @@
 import './styles.css';
+import './mobile-fix.css';
 import appHtml from './app.html?raw';
 
 const root = document.getElementById('root');
