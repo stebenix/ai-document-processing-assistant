@@ -1963,3 +1963,699 @@
         text-overflow:ellipsis;
       }
     }
+
+/* Real-device mobile viewport override
+   Keeps desktop/tablet composition intact while forcing phones into a true
+   single-column layout on iOS Safari and Android Chrome. */
+@media (max-width: 767px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100dvh;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  #root,
+  .app,
+  .app * {
+    min-width: 0;
+  }
+
+  .app {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 64px;
+    padding: 10px 12px;
+    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .brand {
+    order: 1;
+    width: auto;
+    max-width: calc(100% - 104px);
+    flex: 1 1 auto;
+    gap: 9px;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+  }
+
+  .brand-text {
+    min-width: 0;
+  }
+
+  .brand-title,
+  .brand-subtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .brand-title {
+    font-size: 17px;
+  }
+
+  .brand-subtitle {
+    max-width: 170px;
+    font-size: 10px;
+  }
+
+  .menu-btn {
+    order: 3;
+    display: inline-flex !important;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    margin-left: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .topbar .icon-button {
+    order: 2;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .search {
+    order: 4;
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 38px;
+  }
+
+  .search input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-right: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .search .shortcut {
+    display: none;
+  }
+
+  .topbar-spacer,
+  .topbar .status-pill,
+  .topbar .secondary-btn,
+  .topbar .primary-btn {
+    display: none !important;
+  }
+
+  .status-pill,
+  .secondary-btn,
+  .primary-btn,
+  .icon-button {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .workspace {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 12px;
+    overflow-x: hidden;
+  }
+
+  .bento {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .bento > *,
+  .card,
+  .workflow-card,
+  .kpi,
+  .inbox-card,
+  .viewer-card,
+  .fields-card,
+  .review-card,
+  .validation-card,
+  .governance-card,
+  .wide-card,
+  .mid-card,
+  .half-card,
+  .third-card,
+  .analytics-hero,
+  .analytics-chart-card,
+  .analytics-side-card,
+  .analytics-wide-card,
+  .analytics-small-card,
+  .analytics-half-card {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: auto;
+  }
+
+  .card {
+    overflow: hidden;
+  }
+
+  .card-head {
+    padding: 15px 14px 10px;
+    gap: 10px;
+  }
+
+  .card-title,
+  .card-subtitle {
+    min-width: 0;
+  }
+
+  .workflow-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .workflow-actions {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    justify-content: stretch;
+  }
+
+  .workflow-actions .primary-btn,
+  .workflow-actions .secondary-btn,
+  .workflow-actions button {
+    width: 100%;
+  }
+
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .step {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+  }
+
+  .step::after {
+    display: none;
+  }
+
+  .kpi {
+    display: flex;
+    min-height: 118px;
+    padding: 16px;
+  }
+
+  .doc-tabs,
+  .source-chips,
+  .viewer-toolbar,
+  .utility-meta,
+  .metric-band,
+  .savings-grid,
+  .sla-grid,
+  .chart-kpi-grid,
+  .connector-summary {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .doc-row,
+  .field-row,
+  .check-row,
+  .rule-row,
+  .signal-row,
+  .readiness-row,
+  .queue-row,
+  .utility-item-top,
+  .utility-item-actions {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .viewer {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 12px 14px;
+    overflow: hidden;
+  }
+
+  .paper {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px 14px 16px;
+  }
+
+  .invoice-top,
+  .invoice-details {
+    gap: 10px;
+  }
+
+  .table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .fields-table,
+  .systems-table,
+  .analytics-table,
+  .invoice-table {
+    max-width: 100%;
+  }
+
+  .drawer-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 70;
+  }
+
+  .drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(320px, 88vw);
+    max-width: 88vw;
+    height: 100dvh;
+    display: flex;
+    transform: translateX(-102%);
+    overflow: hidden;
+    z-index: 80;
+  }
+
+  .drawer.open {
+    transform: translateX(0);
+  }
+
+  .drawer-head,
+  .drawer-body {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .drawer-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .utility-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .utility-sheet {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    top: auto;
+    width: auto;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+    border-radius: 22px;
+    overflow: hidden;
+  }
+
+  .utility-body,
+  .utility-grid,
+  .utility-card,
+  .utility-list,
+  .utility-item {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .utility-grid,
+  .metric-band,
+  .savings-grid,
+  .sla-grid,
+  .chart-kpi-grid,
+  #page-integrations .connected-systems-card .connector-summary {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .workspace {
+    padding: 10px;
+  }
+
+  .topbar {
+    padding: 9px 10px;
+  }
+
+  .brand-subtitle {
+    max-width: 145px;
+  }
+
+  .menu-btn,
+  .topbar .icon-button {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Real-device phone hard override.
+   Diagnosis: the production CSS minifier rewrote earlier max-width media queries
+   into Media Queries Level 4 range syntax, which older iOS Safari can ignore.
+   Keep these classic media queries late, explicit, and !important-backed. */
+@media screen and (max-width: 767px),
+       screen and (hover: none) and (pointer: coarse) and (max-width: 932px) {
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100dvh !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100% !important;
+    position: relative !important;
+  }
+
+  #root {
+    display: block !important;
+  }
+
+  #root *,
+  #root *::before,
+  #root *::after {
+    min-width: 0 !important;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  body > #root > .app,
+  #root .app,
+  .app {
+    display: block !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 100dvh !important;
+    overflow-x: hidden !important;
+  }
+
+  body > #root .sidebar,
+  #root .app > .sidebar,
+  .app > .sidebar,
+  .sidebar {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    min-width: 0 !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  body > #root .topbar,
+  #root .app > .topbar,
+  .app > .topbar,
+  .topbar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 64px !important;
+    padding: 10px 12px !important;
+    gap: 8px !important;
+    overflow: hidden !important;
+  }
+
+  #root .brand,
+  .topbar .brand {
+    order: 1 !important;
+    flex: 1 1 auto !important;
+    width: auto !important;
+    max-width: calc(100% - 104px) !important;
+    min-width: 0 !important;
+  }
+
+  #root .brand-text,
+  #root .brand-title,
+  #root .brand-subtitle {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  #root .menu-btn,
+  .topbar .menu-btn {
+    order: 3 !important;
+    display: inline-flex !important;
+    visibility: visible !important;
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    max-width: 42px !important;
+    height: 42px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 0 !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  #root .search,
+  .topbar .search {
+    order: 4 !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: 38px !important;
+  }
+
+  #root .search input,
+  .topbar .search input {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding-right: 14px !important;
+  }
+
+  #root .search .shortcut,
+  #root .topbar-spacer,
+  #root .topbar .status-pill,
+  #root .topbar .secondary-btn,
+  #root .topbar .primary-btn {
+    display: none !important;
+  }
+
+  #root .status-pill,
+  #root .secondary-btn,
+  #root .primary-btn,
+  #root .icon-button {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #root .topbar .icon-button {
+    order: 2 !important;
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    max-width: 40px !important;
+    height: 40px !important;
+  }
+
+  body > #root .workspace,
+  #root .app > .workspace,
+  .app > .workspace,
+  .workspace {
+    display: block !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 12px !important;
+    overflow-x: hidden !important;
+  }
+
+  #root .page-panel,
+  #root .page-panel.active {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  body > #root .bento,
+  #root .workspace .bento,
+  .workspace .bento,
+  .bento {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    gap: 12px !important;
+    overflow-x: hidden !important;
+  }
+
+  #root .bento > *,
+  #root .card,
+  #root [class*="card"],
+  #root .kpi,
+  #root .workflow-card,
+  #root .inbox-card,
+  #root .viewer-card,
+  #root .fields-card,
+  #root .review-card,
+  #root .validation-card,
+  #root .governance-card {
+    flex: 0 0 auto !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #root .workflow-top,
+  #root .workflow-actions,
+  #root .steps,
+  #root .step,
+  #root .viewer,
+  #root .paper,
+  #root .table-wrap,
+  #root .doc-list,
+  #root .validation-body,
+  #root .governance-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #root .workflow-top,
+  #root .workflow-actions,
+  #root .steps {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  #root .workflow-actions > *,
+  #root .primary-btn,
+  #root .secondary-btn {
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  #root .drawer-overlay,
+  #root .utility-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #root .drawer {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    display: flex !important;
+    width: min(320px, 88vw) !important;
+    max-width: 88vw !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    transform: translateX(-102%) !important;
+  }
+
+  #root .drawer.open {
+    transform: translateX(0) !important;
+  }
+
+  #root .drawer-body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #root .utility-sheet {
+    width: auto !important;
+    max-width: calc(100vw - 20px) !important;
+    left: 10px !important;
+    right: 10px !important;
+    overflow: hidden !important;
+  }
+}
+/* mobile-fix-v2-real-device */
